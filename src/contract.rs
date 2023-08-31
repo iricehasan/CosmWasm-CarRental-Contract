@@ -113,7 +113,7 @@ pub fn add_car(deps:DepsMut, _info: MessageInfo, id: u64, name:String , model: S
         return Err(ContractError::CarAlreadyExists { car_id: id });
     }
 
-    USER.save(deps.storage, key, &car)?;
+    CAR.save(deps.storage, key, &car)?;
 
     Ok(Response::default())
 }
