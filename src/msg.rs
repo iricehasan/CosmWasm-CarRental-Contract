@@ -22,7 +22,7 @@ pub enum QueryMsg {
     #[returns(UserBalanceResponse)]
     UserBalance { user_address: Addr},
     #[returns(RentResponse)]
-    RentById {},
+    RentById { rent_id: u64 },
 }
 
 #[cw_serde]
@@ -38,7 +38,7 @@ pub struct RentResponse {
     pub car_status: Status,
     pub start_date: u64,
     pub end_date: u64,
-    pub rent_cost: u128,
+    pub rent_cost: u64,
 }
 
 impl From<Rent> for RentResponse {
